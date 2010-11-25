@@ -53,12 +53,10 @@ Supported tools
 
 The following BDD tools are supported
 
-* Nose / Freshen (Python): https://github.com/rlisagor/freshen  **RECOMMENDED**
-* Lettuce (Python): http://lettuce.it/
-* Cucumber (Ruby) : http://cukes.info/
+Nose / Freshen **RECOMMENDED**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Freshen
-^^^^^^^
+https://github.com/rlisagor/freshen
 
 Nose is an extensive unit testing framework for Python. Freshen is a BDD plugin written for that framework.
 Hence we support running unit tests writtein in *nose* in general.
@@ -69,16 +67,15 @@ Installation (on Ubuntu):
 	sudo easy_install freshen 
 
 Place all your stories and Python test code in
-
 **src/test/python/features**
-	
 or
-	
 **src/test/python/<module name>/features**
 
 
 Lettuce
 ^^^^^^^
+
+http://lettuce.it/
 
 Lettuce is a stand-alone uni testing framework for Python. Not as extensive as Nose/Freshen at this point.
 
@@ -94,12 +91,12 @@ Place all your stories and Python test code in
 Cucumber
 ^^^^^^^^
 
+http://cukes.info/
+
 Cucumber is the granddaddy of BDD tools.
 
 Place all your stories and Ruby test code in
-
 **src/test/ruby/features**
-
 
 Reports
 -------
