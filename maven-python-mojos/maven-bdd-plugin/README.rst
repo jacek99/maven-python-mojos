@@ -67,9 +67,12 @@ Installation (on Ubuntu):
 	sudo easy_install freshen 
 
 Place all your stories and Python test code in
-**src/test/python/features**
-or
-**src/test/python/<module name>/features**
+
+	src/test/python/features
+
+or:
+
+	src/test/python/<module name>/features
 
 
 Lettuce
@@ -86,7 +89,7 @@ Installation (on Ubuntu):
 
 Place all your stories and Python test code in
 
-**src/test/python/features**
+	src/test/python/features
 
 Cucumber
 ^^^^^^^^
@@ -96,7 +99,8 @@ http://cukes.info/
 Cucumber is the granddaddy of BDD tools.
 
 Place all your stories and Ruby test code in
-**src/test/ruby/features**
+
+	src/test/ruby/features
 
 Reports
 -------
