@@ -76,6 +76,24 @@ or:
 
 This is our **recommended** tool, due to its maturity and Python background.
 
+*pom.xml* integration
+
+::
+	<plugin>
+		<groupId>maven-python-mojos</groupId>
+		<artifactId>maven-bdd-plugin</artifactId>
+		<version>0.1</version>
+		<executions>
+			<execution>
+				<phase>integration-test</phase>
+				<goals>
+					<goal>nose</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+
+
 Lettuce
 ^^^^^^^
 
@@ -92,6 +110,23 @@ Place all your stories and Python test code in
 
 	src/test/python/features
 
+*pom.xml* integration
+
+::
+	<plugin>
+		<groupId>maven-python-mojos</groupId>
+		<artifactId>maven-bdd-plugin</artifactId>
+		<version>0.1</version>
+		<executions>
+			<execution>
+				<phase>integration-test</phase>
+				<goals>
+					<goal>lettuce</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+
 Cucumber
 ^^^^^^^^
 
@@ -102,6 +137,23 @@ Cucumber is the granddaddy of BDD tools.
 Place all your stories and Ruby test code in
 
 	src/test/ruby/features
+
+*pom.xml* integration:
+
+::
+	<plugin>
+		<groupId>maven-python-mojos</groupId>
+		<artifactId>maven-bdd-plugin</artifactId>
+		<version>0.1</version>
+		<executions>
+			<execution>
+				<phase>integration-test</phase>
+				<goals>
+					<goal>cucumber</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
 
 Reports
 -------
