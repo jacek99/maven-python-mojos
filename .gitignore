@@ -1,6 +1,7 @@
 .metadata/
 .settings/
 *.class
+*.pyc
 target/
 RemoteSystemsTempFiles
 
