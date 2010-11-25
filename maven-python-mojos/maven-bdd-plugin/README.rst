@@ -172,16 +172,13 @@ Maven Repository
 
 Add the following plugin repository to your *pom.xml* in order to use this plugin:
 
-.. configuration-block::
-
-	.. code-block:: xml
-
-		<pluginRepositories>
-			<pluginRepository>
-				<id>javabuilders</id>
-				<url>http://javabuilders.googlecode.com/svn/repo</url>
-			</pluginRepository>
-		</pluginRepositories>
+::
+	<pluginRepositories>
+		<pluginRepository>
+			<id>javabuilders</id>
+			<url>http://javabuilders.googlecode.com/svn/repo</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 
 
