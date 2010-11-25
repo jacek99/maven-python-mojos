@@ -118,6 +118,7 @@ Maven Repository
 Add the following plugin repository to your *pom.xml* in order to use this plugin:
 
 ::
+
 	<repositories> 
 	        <repository> 
 	                <id>javabuilders</id> 
