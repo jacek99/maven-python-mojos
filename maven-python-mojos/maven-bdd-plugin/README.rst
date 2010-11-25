@@ -32,7 +32,7 @@ using basic English language, e.g.
 		
 	  Background:
 	    Given I am the user Admin with the ADMIN role
-	    And there is an existing user call demo with the REGULAR_USER role
+	    And there is an existing user called demo
 		
 	  Scenario: Adding a new user
 	    When I add a new user called john_doe
