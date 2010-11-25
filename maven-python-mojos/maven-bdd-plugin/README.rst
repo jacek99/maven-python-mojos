@@ -119,11 +119,12 @@ Add the following plugin repository to your *pom.xml* in order to use this plugi
 
 ::
 
-	<repositories> 
-	        <repository> 
-	                <id>javabuilders</id> 
-	                <url>http://javabuilders.googlecode.com/svn/repo</url> 
-	        </repository> 
-	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>javabuilders</id>
+			<url>http://javabuilders.googlecode.com/svn/repo</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 
 

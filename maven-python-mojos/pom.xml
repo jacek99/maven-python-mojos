@@ -6,7 +6,7 @@
 	<artifactId>maven-python-mojos</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
-	
+
 	<name>Parent Maven Python Mojos</name>
 	<description>Parent Module for all Maven Python Mojos</description>
 	<url>https://github.com/jacek99/Maven-Python-Mojos</url>
