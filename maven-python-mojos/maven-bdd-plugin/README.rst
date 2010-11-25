@@ -79,6 +79,7 @@ This is our **recommended** tool, due to its maturity and Python background.
 *pom.xml* integration
 
 ::
+
 	<plugin>
 		<groupId>maven-python-mojos</groupId>
 		<artifactId>maven-bdd-plugin</artifactId>
@@ -99,7 +100,7 @@ Lettuce
 
 http://lettuce.it/
 
-Lettuce is a stand-alone uni testing framework for Python. Not as extensive as Nose/Freshen at this point.
+Lettuce is a stand-alone uni testing framework for Python.nose Not as extensive as Nose/Freshen at this point.
 
 Installation (on Ubuntu):
 ::
@@ -113,6 +114,7 @@ Place all your stories and Python test code in
 *pom.xml* integration
 
 ::
+
 	<plugin>
 		<groupId>maven-python-mojos</groupId>
 		<artifactId>maven-bdd-plugin</artifactId>
@@ -141,6 +143,7 @@ Place all your stories and Ruby test code in
 *pom.xml* integration:
 
 ::
+
 	<plugin>
 		<groupId>maven-python-mojos</groupId>
 		<artifactId>maven-bdd-plugin</artifactId>
