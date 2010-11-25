@@ -53,7 +53,7 @@ Supported tools
 
 The following BDD tools are supported
 
-Nose / Freshen **RECOMMENDED**
+Nose / Freshen 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 https://github.com/rlisagor/freshen
@@ -74,6 +74,7 @@ or:
 
 	src/test/python/<module name>/features
 
+This is our **recommended** tool, due to its maturity and Python background.
 
 Lettuce
 ^^^^^^^
