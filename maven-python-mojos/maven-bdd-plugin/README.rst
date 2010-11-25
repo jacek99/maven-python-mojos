@@ -21,24 +21,26 @@ How is this different than regular JUnit tests?
    The idea behind BDD is that you will write the test cases/requirements in a plain text file
    using basic English language, e.g.
    
-		Feature: User REST service
+
+::   
+   
+	Feature: User REST service
 		
-		  In order to maintain Users
-		  As an Admin/Operations user
-		  I want to be able to add, delete and update the list of users in the DB
+	  In order to maintain Users
+	  As an Admin/Operations user
+	  I want to be able to add, delete and update the list of users in the DB
 		
-		  Background:
-		    Given I am the user Admin with the ADMIN role
-		    And there is an existing user call demo with the REGULAR_USER role
+	  Background:
+	    Given I am the user Admin with the ADMIN role
+	    And there is an existing user call demo with the REGULAR_USER role
 		
-		  Scenario: Adding a new user
-		    When I add a new user called john_doe
-		    Then I should have users Admin, demo and john_doe in the database
+	  Scenario: Adding a new user
+	    When I add a new user called john_doe
+	    Then I should have users Admin, demo and john_doe in the database
 		
-		  Scenario: Removing a user
-		    When I delete the demo user
-		    Then I should have users Admin and john_doe in the database
-		    
+	  Scenario: Removing a user
+	    When I delete the demo user
+	    Then I should have users Admin and john_doe in the database
 		   
    BDD tools allow you map each of these steps into code during integration test runs.
    

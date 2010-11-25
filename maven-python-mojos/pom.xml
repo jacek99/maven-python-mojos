@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>0.9.3</version>
+			<version>[0.9.3,)</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -110,9 +110,9 @@
 
 		<extensions>
 			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-file</artifactId>
-				<version>1.0-beta-7</version>
+				<groupId>org.jvnet.wagon-svn</groupId>
+				<artifactId>wagon-svn</artifactId>
+				<version>1.9</version>
 			</extension>
 		</extensions>
 
@@ -127,9 +127,10 @@
 
 	<distributionManagement>
 		<repository>
-			<id>local</id>
-			<url>file:./repository</url>
+			<id>googlecode</id>
+			<url>svn:https://javabuilders.googlecode.com/svn/repo</url>
 		</repository>
 	</distributionManagement>
+
 
 </project>
