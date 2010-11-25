@@ -1,26 +1,26 @@
 Maven BDD Plugin
 ================
 
-   The goal of this plugin is to allow using BDD tools from the Python and Ruby world
-   for *integration testing* of Java web applications.
+The goal of this plugin is to allow using BDD tools from the Python and Ruby world
+for *integration testing* of Java web applications.
    
-   Basically, the idea is that you execute
+Basically, the idea is that you execute
    
-      **mvn integration-test**
+::  **mvn integration-test**
 
-   and it would deploy your Java app to your container and then run integration tests against
-   it that are written in BDD tools, such as Cucumber, Node/Freshen or Lettuce
+and it would deploy your Java app to your container and then run integration tests against
+it that are written in BDD tools, such as Cucumber, Node/Freshen or Lettuce
    
 How is this different than regular JUnit tests?
 -----------------------------------------------
 
-   JUnit tests are great, but they require you to write them in Java (which is verbose) and the test cases you
-   test against are embedded directly in your code. They are impossible to extract by external teams,
-   such as QA.
+JUnit tests are great, but they require you to write them in Java (which is verbose) and the test cases you
+test against are embedded directly in your code. They are impossible to extract by external teams,
+such as QA.
    
-   The idea behind BDD is that you will write the test cases/requirements in a plain text file
-   using basic English language, e.g.
-   
+The idea behind BDD is that you will write the test cases/requirements in a plain text file
+using basic English language, e.g.
+  
 
 ::   
    
@@ -42,10 +42,11 @@ How is this different than regular JUnit tests?
 	    When I delete the demo user
 	    Then I should have users Admin and john_doe in the database
 		   
-   BDD tools allow you map each of these steps into code during integration test runs.
-   
-   Writing them in Python or Ruby should allow you to be more productive than in regular Java 
-   and take advantage of the vast Python/Ruby library ecosystem.
+
+BDD tools allow you map each of these steps into code during integration test runs.
+
+Writing them in Python or Ruby should allow you to be more productive than in regular Java 
+and take advantage of the vast Python/Ruby library ecosystem.
    
 Supported tools
 ---------------
@@ -76,7 +77,7 @@ Reports
 
 All the BDD reports are created in the
  
-   **target/bdd-reports**
+::   **target/bdd-reports**
  
 folder
 
