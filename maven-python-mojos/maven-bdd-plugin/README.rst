@@ -112,4 +112,18 @@ All the BDD reports are created in the
  
 folder
 
+Maven Repository
+----------------
+
+Add the following plugin repository to your *pom.xml* in order to use this plugin:
+
+.. code-block:: xml
+
+	<repositories> 
+	        <repository> 
+	                <id>javabuilders</id> 
+	                <url>http://javabuilders.googlecode.com/svn/repo</url> 
+	        </repository> 
+	</repositories>
+
 
