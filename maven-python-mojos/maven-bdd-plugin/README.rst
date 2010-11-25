@@ -69,12 +69,12 @@ Installation (on Ubuntu):
 	sudo easy_install freshen 
 
 Place all your stories and Python test code in
-::
-	**src/test/python/features**
+
+**src/test/python/features**
 	
-	or
+or
 	
-	**src/test/python/<module name>/features**
+**src/test/python/<module name>/features**
 
 
 Lettuce
@@ -85,11 +85,11 @@ Lettuce is a stand-alone uni testing framework for Python. Not as extensive as N
 Installation (on Ubuntu):
 ::
 	sudo apt-get install python-setuptools
-	sudo easy_install freshen 
+	sudo easy_install lettuce 
 
 Place all your stories and Python test code in
-::
-	**src/test/python/features**
+
+**src/test/python/features**
 
 Cucumber
 ^^^^^^^^
@@ -97,8 +97,8 @@ Cucumber
 Cucumber is the granddaddy of BDD tools.
 
 Place all your stories and Ruby test code in
-::
-	**src/test/ruby/features**
+
+**src/test/ruby/features**
 
 
 Reports
