@@ -1,0 +1,17 @@
+<projectDescription>
+  <name>maven-bdd-plugin</name>
+  <comment>Plugin for creating integration tests for Java applications using Python and Ruby BDD tools. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.python.pydev.PyDevBuilder</name>
+    </buildCommand>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+    <nature>org.python.pydev.pythonNature</nature>
+  </natures>
+</projectDescription>
