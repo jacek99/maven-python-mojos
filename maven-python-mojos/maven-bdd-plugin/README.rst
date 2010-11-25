@@ -51,49 +51,7 @@ and take advantage of the vast Python/Ruby library ecosystem.
 Supported tools
 ---------------
 
-The following BDD tools are supported
-
-Nose / Freshen 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-https://github.com/rlisagor/freshen
-
-Nose is an extensive unit testing framework for Python. Freshen is a BDD plugin written for that framework.
-Hence we support running unit tests writtein in *nose* in general.
-
-Installation (on Ubuntu):
-::
-	sudo apt-get install python-setuptools
-	sudo easy_install freshen 
-
-Place all your stories and Python test code in
-
-	src/test/python/features
-
-or:
-
-	src/test/python/<module name>/features
-
-This is our **recommended** tool, due to its maturity and Python background.
-
-*pom.xml* integration
-
-::
-
-	<plugin>
-		<groupId>maven-python-mojos</groupId>
-		<artifactId>maven-bdd-plugin</artifactId>
-		<version>0.1</version>
-		<executions>
-			<execution>
-				<phase>integration-test</phase>
-				<goals>
-					<goal>nose</goal>
-				</goals>
-			</execution>
-		</executions>
-	</plugin>
-
+The following BDD tools are supported:
 
 Lettuce
 ^^^^^^^
@@ -124,6 +82,46 @@ Place all your stories and Python test code in
 				<phase>integration-test</phase>
 				<goals>
 					<goal>lettuce</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+
+Nose / Freshen 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+https://github.com/rlisagor/freshen
+
+Nose is an extensive unit testing framework for Python. Freshen is a BDD plugin written for that framework.
+Hence we support running unit tests writtein in *nose* in general.
+
+Installation (on Ubuntu):
+::
+	sudo apt-get install python-setuptools
+	sudo easy_install freshen 
+
+Place all your stories and Python test code in
+
+	src/test/python/features
+
+or:
+
+	src/test/python/<module name>/features
+
+
+*pom.xml* integration
+
+::
+
+	<plugin>
+		<groupId>maven-python-mojos</groupId>
+		<artifactId>maven-bdd-plugin</artifactId>
+		<version>0.1</version>
+		<executions>
+			<execution>
+				<phase>integration-test</phase>
+				<goals>
+					<goal>nose</goal>
 				</goals>
 			</execution>
 		</executions>
