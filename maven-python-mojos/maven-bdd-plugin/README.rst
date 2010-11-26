@@ -21,7 +21,6 @@ such as QA.
 The idea behind BDD is that you will write the test cases/requirements in a plain text file
 using basic English language, e.g.
   
-
 ::   
    
 	Feature: User REST service
@@ -58,7 +57,7 @@ Lettuce
 
 http://lettuce.it/
 
-Lettuce is a stand-alone uni testing framework for Python.nose Not as extensive as Nose/Freshen at this point.
+Lettuce is a stand-alone unit BDD framework for Python.
 
 Installation (on Ubuntu):
 ::
@@ -103,11 +102,6 @@ Installation (on Ubuntu):
 Place all your stories and Python test code in
 
 	src/test/python/features
-
-or:
-
-	src/test/python/<module name>/features
-
 
 *pom.xml* integration
 
