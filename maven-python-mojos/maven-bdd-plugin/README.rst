@@ -75,7 +75,7 @@ Place all your stories and Python test code in
 	<plugin>
 		<groupId>maven-python-mojos</groupId>
 		<artifactId>maven-bdd-plugin</artifactId>
-		<version>0.1</version>
+		<version>0.2</version>
 		<executions>
 			<execution>
 				<phase>integration-test</phase>
@@ -110,7 +110,7 @@ Place all your stories and Python test code in
 	<plugin>
 		<groupId>maven-python-mojos</groupId>
 		<artifactId>maven-bdd-plugin</artifactId>
-		<version>0.1</version>
+		<version>0.2</version>
 		<executions>
 			<execution>
 				<phase>integration-test</phase>
@@ -139,7 +139,7 @@ Place all your stories and Ruby test code in
 	<plugin>
 		<groupId>maven-python-mojos</groupId>
 		<artifactId>maven-bdd-plugin</artifactId>
-		<version>0.1</version>
+		<version>0.2</version>
 		<executions>
 			<execution>
 				<phase>integration-test</phase>
