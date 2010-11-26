@@ -1,5 +1,10 @@
 package com.github.mojo.bdd;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
  *
@@ -26,7 +31,16 @@ package com.github.mojo.bdd;
 public class NoseMojo extends AbstractBddMojo {
 
 	public NoseMojo() {
-		super("Nose (with Freshen)","nose.txt","src/test/python","src/test/python","nosetests","--with-freshen","-v");
+		super("Nose (with Freshen)","nose.txt","src/test/python","src/test/python","nosetests","--with-freshen","-v","-s",
+				"--failure-detail", "--with-xunit","--xunit-file=../../../target/bdd-reports/nosetests.xml");
 	}
 
+	@Override
+	protected void preExecute() {
+		try {
+			FileUtils.touch(new File("target/bdd-reports/nosetests.xml"));
+		} catch (IOException e) {
+			getLog().error("Failed to create touch target/bdd-reports/nosetests.xml", e);
+		}
+	}
 }
