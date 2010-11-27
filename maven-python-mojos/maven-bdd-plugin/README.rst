@@ -9,7 +9,7 @@ Basically, the idea is that you execute
   **mvn integration-test**
 
 and it would deploy your Java app to your container and then run integration tests against
-it that are written in BDD tools, such as Cucumber, Freshen or Lettuce
+it that are written in BDD tools, such as Freshen or Lettuce.
    
 How is this different than regular JUnit tests?
 -----------------------------------------------
