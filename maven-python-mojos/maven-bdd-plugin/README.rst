@@ -1,7 +1,7 @@
 Maven BDD Plugin
 ================
 
-The goal of this plugin is to allow using BDD tools from the Python and Ruby world
+The goal of this plugin is to allow using BDD tools from the Python world
 for *integration testing* of Java web applications.
    
 Basically, the idea is that you execute
@@ -44,47 +44,13 @@ using basic English language, e.g.
 
 BDD tools allow you map each of these steps into code during integration test runs.
 
-Writing them in Python or Ruby should allow you to be more productive than in regular Java 
-and take advantage of the vast Python/Ruby library ecosystem.
+Writing them in Pythony should allow you to be more productive than in regular Java 
+and take advantage of the vast Python library ecosystem.
    
 Supported tools
 ---------------
 
 The following BDD tools are supported:
-
-Lettuce
-^^^^^^^
-
-http://lettuce.it/
-
-Lettuce is a stand-alone unit BDD framework for Python.
-
-Installation (on Ubuntu):
-::
-	sudo apt-get install python-setuptools
-	sudo easy_install lettuce 
-
-Place all your stories and Python test code in
-
-	src/test/python/features
-
-*pom.xml* integration
-
-::
-
-	<plugin>
-		<groupId>maven-python-mojos</groupId>
-		<artifactId>maven-bdd-plugin</artifactId>
-		<version>0.2</version>
-		<executions>
-			<execution>
-				<phase>integration-test</phase>
-				<goals>
-					<goal>lettuce</goal>
-				</goals>
-			</execution>
-		</executions>
-	</plugin>
 
 Nose / Freshen 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -121,18 +87,23 @@ Place all your stories and Python test code in
 		</executions>
 	</plugin>
 
-Cucumber
-^^^^^^^^
+Lettuce
+^^^^^^^
 
-http://cukes.info/
+http://lettuce.it/
 
-Cucumber is the granddaddy of BDD tools.
+Lettuce is a stand-alone unit BDD framework for Python.
 
-Place all your stories and Ruby test code in
+Installation (on Ubuntu):
+::
+	sudo apt-get install python-setuptools
+	sudo easy_install lettuce 
 
-	src/test/ruby/features
+Place all your stories and Python test code in
 
-*pom.xml* integration:
+	src/test/python/features
+
+*pom.xml* integration
 
 ::
 
@@ -144,11 +115,12 @@ Place all your stories and Ruby test code in
 			<execution>
 				<phase>integration-test</phase>
 				<goals>
-					<goal>cucumber</goal>
+					<goal>lettuce</goal>
 				</goals>
 			</execution>
 		</executions>
 	</plugin>
+
 
 Reports
 -------

@@ -37,10 +37,4 @@ public class MojosTest {
 		mojo.execute();
 	}
 	
-	@Test
-	public void testCucumber() throws MojoExecutionException, MojoFailureException {
-		CucumberMojo mojo = new CucumberMojo();
-		mojo.execute();
-	}
-	
 }
