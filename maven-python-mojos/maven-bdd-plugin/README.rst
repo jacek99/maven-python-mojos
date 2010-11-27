@@ -56,6 +56,7 @@ Nose / Freshen
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 https://github.com/rlisagor/freshen
+http://somethingaboutorange.com/mrl/projects/nose/
 
 Nose is an extensive unit testing framework for Python. Freshen is a BDD plugin written for that framework.
 Hence we support running unit tests writtein in *nose* in general.
