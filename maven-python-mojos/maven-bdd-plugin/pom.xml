@@ -10,11 +10,11 @@
 
 	<groupId>maven-python-mojos</groupId>
 	<artifactId>maven-bdd-plugin</artifactId>
-	<version>0.2</version>
+	<version>0.3</version>
 	<packaging>maven-plugin</packaging>
 
-	<name>Python/Ruby BDD Maven Plugin</name>
-	<description>Plugin for creating integration tests for Java applications using Python and Ruby BDD tools</description>
+	<name>Maven Python BDD Plugin</name>
+	<description>Plugin for creating integration tests for Java applications using Python BDD tools</description>
 	<url>https://github.com/jacek99/Maven-Python-Mojos</url>
 
 	<properties>

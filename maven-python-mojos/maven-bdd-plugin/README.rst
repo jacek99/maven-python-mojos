@@ -133,6 +133,25 @@ All the BDD reports are created in the
  
 folder
 
+Goals
+-----
+
+Although the recommended solution is hooking up to the **mvn integration-test** phase, you can also run
+the BDD goals separately:
+
+* **bdd:nose** - runs all the BDD tests using Nose/Freshen
+* **bdd:lettuce** - runs all the BDD tests using Lettuce
+
+Re-running failed tests only
+----------------------------
+
+If you are using Nose/Freshen, you can pass the *failed=true* command line option, e.g.
+
+  **mvn integration-test -Dfailed=true**
+  
+That will append the Nose "--failed" option which will tell it to only re-run the tests that failed during
+the last test run.
+
 Maven Repository
 ----------------
 

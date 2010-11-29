@@ -32,7 +32,8 @@ public class NoseMojo extends AbstractBddMojo {
 
 	public NoseMojo() {
 		super("Nose (with Freshen)","nose.txt","src/test/python","src/test/python","nosetests","--with-freshen","-v","-s",
-				"--failure-detail", "--with-xunit","--xunit-file=../../../target/bdd-reports/nosetests.xml");
+				"--failure-detail", "--with-xunit","--xunit-file=../../../target/bdd-reports/nosetests.xml",
+				(System.getProperty(BddConstants.FAILED_ONLY, "false").equals("true") ? "--failed" : ""));
 	}
 
 	@Override

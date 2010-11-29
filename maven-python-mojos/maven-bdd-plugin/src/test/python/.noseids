@@ -1,0 +1,17 @@
+(dp1
+S'failed'
+p2
+(lp3
+sS'source_names'
+p4
+(lp5
+S'.'
+asS'ids'
+p6
+(dp7
+I1
+(S'/usr/local/lib/python2.6/dist-packages/freshen-0.2-py2.6.egg/freshen/noseplugin.py'
+S'freshen.noseplugin'
+S'FreshenTestCase.runTest'
+tp8
+ss.
