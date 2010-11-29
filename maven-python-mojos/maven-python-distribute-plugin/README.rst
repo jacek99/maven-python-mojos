@@ -19,8 +19,22 @@ Functionality
 Configuration
 -------------
 
-Add the following to your
+Add the following to your *pom.xml* build section:
+::
 
+	<plugin>
+		<groupId>maven-python-mojos</groupId>
+		<artifactId>maven-python-distribute-plugin</artifactId>
+		<version>0.1</version>
+		<executions>
+			<execution>
+				<phase>package</phase>
+				<goals>
+					<goal>package</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
 
 Maven Repository
 ----------------
