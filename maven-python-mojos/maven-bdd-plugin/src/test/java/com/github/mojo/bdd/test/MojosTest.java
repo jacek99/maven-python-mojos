@@ -78,6 +78,16 @@ public class MojosTest {
 		assertFile("nosetests.xml");
 	}
 	
+	@Test(expected=MojoExecutionException.class)
+	public void testNoseUndefinedFails() throws MojoExecutionException, MojoFailureException {
+		NoseMojo mojo = new NoseMojo();
+		
+		mojo.setWorkingDirectory("src/test/nose-undefined");
+		mojo.setTestDirectory("src/test/nose-undefined/features");
+		
+		mojo.execute();
+	}
+	
 	private void assertFile(String fileName) {
 		File file = new File("target/bdd-reports/" + fileName);
 		assertTrue(fileName + " did not get created", file.exists());
