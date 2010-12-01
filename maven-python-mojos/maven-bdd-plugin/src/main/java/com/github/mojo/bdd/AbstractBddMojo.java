@@ -101,6 +101,8 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 				if (exitCode != 0) {
 					throw new MojoFailureException(toolName + " unit test(s) failed");
 				}
+				
+				postExecute(bld);
 
 			} else {
 
