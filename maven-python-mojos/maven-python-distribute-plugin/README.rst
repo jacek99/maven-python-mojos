@@ -46,7 +46,7 @@ Set the *version* field in your *setup.py* to a hardcoded constant of **${VERSIO
 	setup(
 	      install_requires=['distribute'],
 	      name = 'my-library',
-	      version = '%{VERSION}',
+	      version = '${VERSION}',
 	      packages = find_packages('.')
 	)
 
