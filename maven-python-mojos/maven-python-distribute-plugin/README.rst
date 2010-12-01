@@ -36,6 +36,21 @@ Add the following to your *pom.xml* build section:
 		</executions>
 	</plugin>
 
+setup.py
+--------
+
+Set the *version* field in your *setup.py* to a hardcoded constant of **${VERSION}**, e.g.
+::
+	from setuptools import setup, find_packages
+	
+	setup(
+	      install_requires=['distribute'],
+	      name = 'my-library',
+	      version = '%{VERSION}',
+	      packages = find_packages('.')
+	)
+
+
 Maven Repository
 ----------------
 

@@ -8,12 +8,25 @@
 		<groupId>maven-python-mojos</groupId>
 		<version>1.0</version>
 	</parent>
-	
+
 	<groupId>maven-python-mojos</groupId>
 	<artifactId>maven-python-distribute-plugin</artifactId>
 	<version>0.1</version>
 	<packaging>maven-plugin</packaging>
 	<name>Maven Python Distribute Plugin</name>
-	
-	<dependencies/>
+
+	<dependencies />
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-plugin-plugin</artifactId>
+				<configuration>
+					<goalPrefix>distribute</goalPrefix>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>

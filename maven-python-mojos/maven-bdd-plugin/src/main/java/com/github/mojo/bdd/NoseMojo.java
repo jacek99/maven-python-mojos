@@ -23,7 +23,7 @@ import org.apache.commons.io.FileUtils;
 
 
 /**
- * Goat which runs Python Nose/Freshen BDD feature story tests from src/test/python
+ * Goal which runs regular Python Nose tests from src/test/python
  * 
  * @goal nose
  * @phase integration-test
@@ -31,7 +31,7 @@ import org.apache.commons.io.FileUtils;
 public class NoseMojo extends AbstractBddMojo {
 
 	public NoseMojo() {
-		super("Nose (with Freshen)","nose.txt","src/test/python","src/test/python","nosetests","--with-freshen","-v","-s",
+		super("Nose","nose.txt","src/test/python","src/test/python","nosetests","--with-freshen","-v","-s",
 				"--failure-detail", "--with-xunit","--xunit-file=../../../target/bdd-reports/nosetests.xml",
 				(System.getProperty(BddConstants.FAILED_ONLY, "false").equals("true") ? "--failed" : ""));
 	}
