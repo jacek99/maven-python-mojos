@@ -1,4 +1,4 @@
-Maven BDD Plugin
+Maven BDD Plugin 
 ================
 
 The goal of this plugin is to allow using BDD tools from the Python world
@@ -78,10 +78,8 @@ Place all your stories and Python test code in
 	<plugin>
 		<groupId>maven-python-mojos</groupId>
 		<artifactId>maven-bdd-plugin</artifactId>
-		<version>0.2</version>
 		<executions>
 			<execution>
-				<phase>integration-test</phase>
 				<goals>
 					<goal>nose</goal>
 				</goals>
@@ -112,10 +110,8 @@ Place all your stories and Python test code in
 	<plugin>
 		<groupId>maven-python-mojos</groupId>
 		<artifactId>maven-bdd-plugin</artifactId>
-		<version>0.2</version>
 		<executions>
 			<execution>
-				<phase>integration-test</phase>
 				<goals>
 					<goal>lettuce</goal>
 				</goals>
@@ -139,7 +135,7 @@ Goals
 Although the recommended solution is hooking up to the **mvn integration-test** phase, you can also run
 the BDD goals separately:
 
-* **bdd:nose** - runs all the BDD tests using Nose/Freshen
+* **bdd:nose** - runs all the BDD tests using Nose with Freshen
 * **bdd:lettuce** - runs all the BDD tests using Lettuce
 
 Re-running failed tests only

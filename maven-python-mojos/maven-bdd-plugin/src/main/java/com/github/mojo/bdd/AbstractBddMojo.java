@@ -50,6 +50,13 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 	 */
 	protected void preExecute() {}
 	
+	/**
+	 * Can be overriden in descendants for any post-processing
+	 * Only called upon success
+	 * @param output
+	 */
+	protected void postExecute(StringBuilder output) throws MojoExecutionException, MojoFailureException {}
+	
 	/*
 	 * (non-Javadoc)
 	 * 

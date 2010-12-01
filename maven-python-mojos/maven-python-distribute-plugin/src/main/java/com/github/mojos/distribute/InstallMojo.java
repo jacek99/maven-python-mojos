@@ -66,7 +66,5 @@ public class InstallMojo extends AbstractMojo {
 		} catch (InterruptedException e) {
 			throw new MojoExecutionException("Unable to execute python " + setup.getPath(),e);
 		}
-	
-		
 	}
 }

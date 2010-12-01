@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.MojoFailureException;
 
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
@@ -33,15 +35,32 @@ public class NoseMojo extends AbstractBddMojo {
 	public NoseMojo() {
 		super("Nose","nose.txt","src/test/python","src/test/python","nosetests","--with-freshen","-v","-s",
 				"--failure-detail", "--with-xunit","--xunit-file=../../../target/bdd-reports/nosetests.xml",
+				"--with-id","--id-file=target/bdd-reports/.noseids",
 				(System.getProperty(BddConstants.FAILED_ONLY, "false").equals("true") ? "--failed" : ""));
 	}
 
+	/* (non-Javadoc)
+	 * @see com.github.mojo.bdd.AbstractBddMojo#preExecute()
+	 */
 	@Override
 	protected void preExecute() {
 		try {
 			FileUtils.touch(new File("target/bdd-reports/nosetests.xml"));
 		} catch (IOException e) {
 			getLog().error("Failed to create touch target/bdd-reports/nosetests.xml", e);
+		}
+	}
+	
+
+	/* (non-Javadoc)
+	 * @see com.github.mojo.bdd.AbstractBddMojo#postExecute(java.lang.StringBuilder)
+	 */
+	@Override
+	protected void postExecute(StringBuilder output) throws MojoExecutionException, MojoFailureException {
+		//workaround for a Nose/Freshen shortcoming where UNDEFINED steps do not fail the build
+		if (output.indexOf("UNDEFINED") > 0) {
+			getLog().error("UNDEFINED steps found! Failing build.");
+			throw new MojoExecutionException("UNDEFINED steps found! Failing build.");
 		}
 	}
 }
