@@ -35,7 +35,7 @@ public class NoseMojo extends AbstractBddMojo {
 	public NoseMojo() {
 		super("Nose","nose.txt","src/test/python","src/test/python","nosetests","--with-freshen","-v","-s",
 				"--failure-detail", "--with-xunit","--xunit-file=../../../target/bdd-reports/nosetests.xml",
-				"--with-id","--id-file=target/bdd-reports/.noseids",
+				"--with-id","--id-file=../../../target/bdd-reports/.noseids",
 				(System.getProperty(BddConstants.FAILED_ONLY, "false").equals("true") ? "--failed" : ""));
 	}
 
@@ -43,11 +43,12 @@ public class NoseMojo extends AbstractBddMojo {
 	 * @see com.github.mojo.bdd.AbstractBddMojo#preExecute()
 	 */
 	@Override
-	protected void preExecute() {
+	protected void preExecute() throws MojoExecutionException, MojoFailureException {
 		try {
 			FileUtils.touch(new File("target/bdd-reports/nosetests.xml"));
 		} catch (IOException e) {
 			getLog().error("Failed to create touch target/bdd-reports/nosetests.xml", e);
+			throw new MojoExecutionException("Failed to create touch target/bdd-reports/nosetests.xml");
 		}
 	}
 	

@@ -25,8 +25,10 @@ public class MojosTest {
 	@Before
 	public void setUp() {
 		File dir = new File("target/bdd-reports");
-		for(File file : dir.listFiles()) {
-			file.delete();
+		if (dir.exists()) {
+			for(File file : dir.listFiles()) {
+				file.delete();
+			}
 		}
 	}
 	
