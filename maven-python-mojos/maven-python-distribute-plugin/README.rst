@@ -1,6 +1,8 @@
 Maven Python Distribute Plugin
 ==============================
 
+**version**: 0.1.1
+
 This plugin integrates the Python **distribute** module into the Maven build:
 
 http://packages.python.org/distribute/
@@ -25,6 +27,7 @@ Add the following to your *pom.xml* build section:
 	<plugin>
 		<groupId>maven-python-mojos</groupId>
 		<artifactId>maven-python-distribute-plugin</artifactId>
+		<version>..</version>
 		<executions>
 			<execution>
 				<goals>

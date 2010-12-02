@@ -26,7 +26,7 @@ package com.github.mojo.bdd;
 public class LettuceMojo extends AbstractBddMojo {
 
 	public LettuceMojo() {
-		super("Lettuce","lettuce.txt","src/test/python","src/test/python/features","lettuce","-v 2");
+		super("Lettuce","lettuce.txt","src/test/python","src/test/python/features","lettuce","-v 3");
 	}
 
 }

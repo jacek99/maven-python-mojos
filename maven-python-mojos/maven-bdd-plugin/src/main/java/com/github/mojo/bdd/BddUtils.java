@@ -28,7 +28,7 @@ public class BddUtils {
 			}
 			
 		} else {
-			if (!reports.mkdir()) {
+			if (!reports.mkdirs()) {
 				throw new MojoExecutionException("Unable to create reports folder in " + REPORTS_FOLDER);
 			}
 		}
