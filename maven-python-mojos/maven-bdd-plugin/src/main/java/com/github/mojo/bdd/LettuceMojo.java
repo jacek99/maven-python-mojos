@@ -32,22 +32,22 @@ import org.apache.maven.plugin.MojoFailureException;
  */
 public class LettuceMojo extends AbstractBddMojo {
 
-	private static final String FEATURE = "feature";
+	public static final String FEATURE = "feature";
 	
 	public LettuceMojo() {
-		super("Lettuce","lettuce.txt","src/test/python","src/test/python/features","lettuce","-v 3");
+		super("Lettuce","lettuce.txt","src/test/python","src/test/python/features","lettuce","-v 2");
 	}
 	
 	@Override
 	protected void preExecute() throws MojoExecutionException, MojoFailureException {
-		getRequestOptions().clear();
+		super.preExecute();
 		
 		//see if a particular feature was specified to run
 		if (System.getProperty(FEATURE) != null) {
 			String featureName = System.getProperty(FEATURE);
 			//we need to find the first file that corresponds to that feature name
 			File testDir = new File(getTestDirectory());
-			Collection<File> features = FileUtils.listFiles(testDir, new String[]{".feature"}, true);
+			Collection<File> features = FileUtils.listFiles(testDir, new String[]{"feature"}, true);
 			
 			boolean found = false;
 			for(File feature : features) {

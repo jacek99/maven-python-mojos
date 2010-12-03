@@ -1,7 +1,7 @@
 Maven BDD Plugin 
 ================
 
-**version**: 0.5.2
+**version**: 0.6.0
 
 The goal of this plugin is to allow using BDD tools from the Python world
 for *integration testing* of Java web applications.
@@ -102,13 +102,27 @@ Place all your stories and Python test code in
 
 **Re-running failed tests only**
 
-If you are using Nose/Freshen, you can pass the *failed=true* command line option, e.g.
+You can pass the *failed=true* command line option, e.g.
 
   **mvn integration-test -Dfailed=true**
   
 That will append the Nose "--failed" option which will tell it to only re-run the tests that failed during
 the last test run.
 
+	*Note*: there seem to be some issues with Freshen supporting the "--failed" option currently. An issue has been logged with them.
+
+**Re-running tagged tests only**
+
+In Freshen, you can annotate scenarios with tags, e.g. 
+::
+	@my_special_test
+	Scenario: Do something special
+
+You can then pass the *tags=<comma separated list of tags>* command line option, e.g.
+
+  **mvn integration-test -Dtags=my_special_test,some_other_test**
+  
+That will append the Freshen "--tags" option which will tell it to only re-run the tagged tests
 
 Lettuce
 ^^^^^^^
@@ -152,7 +166,6 @@ To run just a specific feature, add the *feature=<feature name>* command line op
   
 This will search underneath the test folder for the first file called *my_feature.feature* and tell
 Lettuce to test it.
-
 
 Reports
 -------

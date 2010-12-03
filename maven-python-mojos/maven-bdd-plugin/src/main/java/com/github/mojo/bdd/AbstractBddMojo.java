@@ -69,6 +69,7 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 	 * Can be overriden in descendants to do Mojo-specific stuff
 	 */
 	protected void preExecute() throws MojoExecutionException, MojoFailureException {
+		requestOptions.clear();
 	}
 
 	/**

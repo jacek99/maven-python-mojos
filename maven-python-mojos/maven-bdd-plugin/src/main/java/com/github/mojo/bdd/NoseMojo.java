@@ -32,11 +32,12 @@ import org.apache.maven.plugin.MojoFailureException;
  */
 public class NoseMojo extends AbstractBddMojo {
 
+	public static final String TAGS = "tags";
+	
 	public NoseMojo() {
 		super("Nose","nose.txt","src/test/python","src/test/python","nosetests","--with-freshen","-v","-s",
 				"--failure-detail", "--with-xunit","--xunit-file=../../../target/bdd-reports/nosetests.xml",
-				"--with-id","--id-file=../../../target/bdd-reports/.noseids",
-				(System.getProperty(BddConstants.FAILED_ONLY, "false").equals("true") ? "--failed" : ""));
+				"--with-id","--id-file=../../../target/bdd-reports/.noseids");
 	}
 
 	/* (non-Javadoc)
@@ -44,11 +45,23 @@ public class NoseMojo extends AbstractBddMojo {
 	 */
 	@Override
 	protected void preExecute() throws MojoExecutionException, MojoFailureException {
+		super.preExecute();
 		try {
 			FileUtils.touch(new File("target/bdd-reports/nosetests.xml"));
 		} catch (IOException e) {
 			getLog().error("Failed to create touch target/bdd-reports/nosetests.xml", e);
 			throw new MojoExecutionException("Failed to create touch target/bdd-reports/nosetests.xml");
+		}
+		
+		//add support for running with tags
+		if (System.getProperty(TAGS) != null) {
+			String tags = System.getProperty(TAGS);
+			getRequestOptions().add("--tags=" + tags);
+		}
+		
+		//add support for re-running last failed tesrs only
+		if ("true".equals(System.getProperty(BddConstants.FAILED_ONLY))) {
+			getRequestOptions().add("--failed");
 		}
 	}
 	
