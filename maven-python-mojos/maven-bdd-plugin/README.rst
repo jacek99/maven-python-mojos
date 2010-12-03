@@ -100,14 +100,14 @@ Place all your stories and Python test code in
 	</plugin>
 
 
-	**Re-running failed tests only**
-	
-	If you are using Nose/Freshen, you can pass the *failed=true* command line option, e.g.
-	
-	  **mvn integration-test -Dfailed=true**
-	  
-	That will append the Nose "--failed" option which will tell it to only re-run the tests that failed during
-	the last test run.
+**Re-running failed tests only**
+
+If you are using Nose/Freshen, you can pass the *failed=true* command line option, e.g.
+
+  **mvn integration-test -Dfailed=true**
+  
+That will append the Nose "--failed" option which will tell it to only re-run the tests that failed during
+the last test run.
 
 
 Lettuce
@@ -144,14 +144,14 @@ Place all your stories and Python test code in
 	</plugin>
 
 
-	**Testing a specific feature only**
-	
-	To run just a specific feature, add the *feature=<feature name>* command line option, e.g.
-	
-	  **mvn integration-test -Dfeature=my_feature**
-	  
-	This will search underneath the test folder for the first file called *my_feature.feature* and tell
-	Lettuce to test it.
+**Testing a specific feature only**
+
+To run just a specific feature, add the *feature=<feature name>* command line option, e.g.
+
+  **mvn integration-test -Dfeature=my_feature**
+  
+This will search underneath the test folder for the first file called *my_feature.feature* and tell
+Lettuce to test it.
 
 
 Reports
