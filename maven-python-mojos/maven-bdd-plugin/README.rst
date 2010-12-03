@@ -49,20 +49,29 @@ BDD tools allow you map each of these steps into code during integration test ru
 Writing them in Pythony should allow you to be more productive than in regular Java 
 and take advantage of the vast Python library ecosystem.
    
+Goals
+-----
+
+Although the recommended solution is hooking up to the **mvn integration-test** phase, you can also run
+the BDD goals separately:
+
+* **bdd:nose** - runs all the BDD tests using Nose with Freshen
+* **bdd:lettuce** - runs all the BDD tests using Lettuce   
+   
 Supported tools
 ---------------
 
 The following BDD tools are supported:
 
 Nose / Freshen 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 https://github.com/rlisagor/freshen
 
 http://somethingaboutorange.com/mrl/projects/nose/
 
 Nose is an extensive unit testing framework for Python. Freshen is a BDD plugin written for that framework.
-Hence we support running unit tests writtein in *Nose* in general.
+Hence we support running unit tests written in *Nose* in general.
 
 Installation (on Ubuntu):
 ::
@@ -89,6 +98,17 @@ Place all your stories and Python test code in
 			</execution>
 		</executions>
 	</plugin>
+
+
+	**Re-running failed tests only**
+	
+	If you are using Nose/Freshen, you can pass the *failed=true* command line option, e.g.
+	
+	  **mvn integration-test -Dfailed=true**
+	  
+	That will append the Nose "--failed" option which will tell it to only re-run the tests that failed during
+	the last test run.
+
 
 Lettuce
 ^^^^^^^
@@ -124,6 +144,16 @@ Place all your stories and Python test code in
 	</plugin>
 
 
+	**Testing a specific feature only**
+	
+	To run just a specific feature, add the *feature=<feature name>* command line option, e.g.
+	
+	  **mvn integration-test -Dfeature=my_feature**
+	  
+	This will search underneath the test folder for the first file called *my_feature.feature* and tell
+	Lettuce to test it.
+
+
 Reports
 -------
 
@@ -133,24 +163,6 @@ All the BDD reports are created in the
  
 folder
 
-Goals
------
-
-Although the recommended solution is hooking up to the **mvn integration-test** phase, you can also run
-the BDD goals separately:
-
-* **bdd:nose** - runs all the BDD tests using Nose with Freshen
-* **bdd:lettuce** - runs all the BDD tests using Lettuce
-
-Re-running failed tests only
-----------------------------
-
-If you are using Nose/Freshen, you can pass the *failed=true* command line option, e.g.
-
-  **mvn integration-test -Dfailed=true**
-  
-That will append the Nose "--failed" option which will tell it to only re-run the tests that failed during
-the last test run.
 
 Maven Repository
 ----------------

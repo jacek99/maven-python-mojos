@@ -1,5 +1,12 @@
 package com.github.mojo.bdd;
 
+import java.io.File;
+import java.util.Collection;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.MojoFailureException;
+
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
  *
@@ -25,8 +32,37 @@ package com.github.mojo.bdd;
  */
 public class LettuceMojo extends AbstractBddMojo {
 
+	private static final String FEATURE = "feature";
+	
 	public LettuceMojo() {
 		super("Lettuce","lettuce.txt","src/test/python","src/test/python/features","lettuce","-v 3");
+	}
+	
+	@Override
+	protected void preExecute() throws MojoExecutionException, MojoFailureException {
+		getRequestOptions().clear();
+		
+		//see if a particular feature was specified to run
+		if (System.getProperty(FEATURE) != null) {
+			String featureName = System.getProperty(FEATURE);
+			//we need to find the first file that corresponds to that feature name
+			File testDir = new File(getTestDirectory());
+			Collection<File> features = FileUtils.listFiles(testDir, new String[]{".feature"}, true);
+			
+			boolean found = false;
+			for(File feature : features) {
+				if (feature.getName().equals(featureName + ".feature")) {
+					found = true;
+					getRequestOptions().add(feature.getAbsolutePath());
+					break;
+				}
+			}
+			
+			if (!found) {
+				throw new MojoFailureException("Unable to find " + featureName + ".feature under " + getTestDirectory());
+			}
+		}
+		
 	}
 
 }

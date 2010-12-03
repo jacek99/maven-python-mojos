@@ -17,7 +17,6 @@ Functionality
 * packages the Python module during the Maven **package** phase
 * allows specifying which format should the Python module be distributed as: source, RPM, egg, tar, zip, etc.
 
-
 Configuration
 -------------
 

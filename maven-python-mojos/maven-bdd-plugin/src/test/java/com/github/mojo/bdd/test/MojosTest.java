@@ -1,7 +1,6 @@
 package com.github.mojo.bdd.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.io.File;
 
@@ -10,6 +9,7 @@ import org.apache.maven.plugin.MojoFailureException;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.github.mojo.bdd.AbstractBddMojo;
 import com.github.mojo.bdd.BddConstants;
 import com.github.mojo.bdd.LettuceMojo;
 import com.github.mojo.bdd.NoseMojo;
@@ -31,18 +31,24 @@ public class MojosTest {
 		}
 	}
 	
+	//mocks the Plexus container dependency injection
+	private void mockSetUp(AbstractBddMojo mojo) {
+		mojo.setOutputDirectory(new File("target"));
+	}
+	
 	@Test
 	public void testLettuce() throws MojoExecutionException, MojoFailureException {
-		LettuceMojo lettuce = new LettuceMojo();
+		LettuceMojo mojo = new LettuceMojo();
+		mockSetUp(mojo);
 		
-		assertEquals("src/test/python",lettuce.getWorkingDirectory());
-		assertEquals("src/test/python/features",lettuce.getTestDirectory());
+		assertEquals("src/test/python",mojo.getWorkingDirectory());
+		assertEquals("src/test/python/features",mojo.getTestDirectory());
 		
 		//just for the test, point to a different folder to avoid conflicting with the Nose tests
-		lettuce.setWorkingDirectory("src/test/lettuce");
-		lettuce.setTestDirectory("src/test/lettuce/features");
+		mojo.setWorkingDirectory("src/test/lettuce");
+		mojo.setTestDirectory("src/test/lettuce/features");
 		
-		lettuce.execute();
+		mojo.execute();
 		
 		assertFile("lettuce.txt");
 	}
@@ -50,6 +56,8 @@ public class MojosTest {
 	@Test 
 	public void testNose() throws MojoExecutionException, MojoFailureException {
 		NoseMojo mojo = new NoseMojo();
+		mockSetUp(mojo);
+		
 		mojo.execute();
 		
 		assertFile("nose.txt");
@@ -59,7 +67,9 @@ public class MojosTest {
 	@Test 
 	public void testNoseFailed() throws MojoExecutionException, MojoFailureException {
 		System.setProperty(BddConstants.FAILED_ONLY, "true");
+		
 		NoseMojo mojo = new NoseMojo();
+		mockSetUp(mojo);
 		
 		//assert that the "--failed" option has been added
 		boolean found = false;
@@ -79,7 +89,9 @@ public class MojosTest {
 	
 	@Test(expected=MojoExecutionException.class)
 	public void testNoseUndefinedFails() throws MojoExecutionException, MojoFailureException {
+		
 		NoseMojo mojo = new NoseMojo();
+		mockSetUp(mojo);
 		
 		mojo.setWorkingDirectory("src/test/nose-undefined");
 		mojo.setTestDirectory("src/test/nose-undefined/features");

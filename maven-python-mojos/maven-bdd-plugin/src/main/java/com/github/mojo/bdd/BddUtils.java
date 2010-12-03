@@ -16,11 +16,11 @@ import org.apache.maven.plugin.logging.Log;
  */
 public class BddUtils {
 
-	public static final String REPORTS_FOLDER = "target/bdd-reports";
+	public static final String REPORTS_FOLDER = "bdd-reports";
 	
-	public static void createReportsFolder() throws MojoExecutionException {
+	public static void createReportsFolder(File outputDirectory) throws MojoExecutionException {
 		
-		File reports = new File(REPORTS_FOLDER);
+		File reports = new File(outputDirectory.getAbsolutePath() + File.separator + REPORTS_FOLDER);
 		if (reports.exists()) {
 			
 			if (!reports.isDirectory()) {
@@ -42,8 +42,8 @@ public class BddUtils {
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
 	 */
-	public static void writeReport(String reportName, String body, Log log) throws MojoExecutionException {
-		File report = new File(REPORTS_FOLDER + File.separator + reportName);
+	public static void writeReport(File outputDirectory, String reportName, String body, Log log) throws MojoExecutionException {
+		File report = new File(outputDirectory.getAbsoluteFile() + File.separator + REPORTS_FOLDER + File.separator + reportName);
 		if (report.exists()) {
 			if (!report.delete()) {
 				throw new MojoExecutionException("Failed to delete " + report.getAbsolutePath());
