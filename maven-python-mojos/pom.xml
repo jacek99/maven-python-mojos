@@ -5,7 +5,7 @@
 
 	<groupId>maven-python-mojos</groupId>
 	<artifactId>maven-python-mojos</artifactId>
-	<version>1.0</version>
+	<version>1.1</version>
 	<packaging>pom</packaging>
 
 	<name>Parent Maven Python Mojos</name>
@@ -45,6 +45,7 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.0</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.collections</groupId>
