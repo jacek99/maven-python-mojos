@@ -41,7 +41,7 @@ public class MojosTest {
 	//mocks the Plexus container dependency injection
 	private void mockSetUp(AbstractBddMojo mojo) {
 		mojo.setProjectDirectory(new File("."));
-		mojo.setOutputDirectory(new File("target"));
+		mojo.setBuildDirectory(new File("target"));
 	}
 	
 	@Test
