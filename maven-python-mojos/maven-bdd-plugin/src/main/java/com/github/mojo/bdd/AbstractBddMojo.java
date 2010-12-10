@@ -27,6 +27,12 @@ import com.google.common.collect.Sets;
 public abstract class AbstractBddMojo extends AbstractMojo {
 
 	/**
+	 * @parameter default-value="${project.baseDir}"
+	 */
+	@Getter
+	@Setter
+	private File projectDirectory;
+	/**
 	 * @parameter default-value="${project.reporting.outputDirectory}"
 	 */
 	@Getter
@@ -106,7 +112,10 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 				Set<String> commands = Sets.union(Sets.newLinkedHashSet(Arrays.asList(testCommands)), requestOptions);
 				
 				ProcessBuilder t = new ProcessBuilder(commands.toArray(new String[commands.size()]));
-				t.directory(new File(workingDirectory));
+				
+				File directory = new File(projectDirectory + File.separator + this.workingDirectory);
+				
+				t.directory(directory);
 				t.redirectErrorStream(true);
 
 				Process pr = t.start();
