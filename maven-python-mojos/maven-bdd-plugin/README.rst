@@ -197,7 +197,7 @@ The specific python interpreter name can be specified in the configuration by ad
 					<goal>nose</goal>
 				</goals>
 				<configuration>
-					<python>python2.7</daemon>
+					<python>python2.7</python>
 				</configuration>
 			</execution>
 		</executions>
