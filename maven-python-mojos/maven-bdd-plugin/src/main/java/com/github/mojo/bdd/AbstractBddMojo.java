@@ -125,7 +125,7 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 
 				File directory = new File(projectDirectory + File.separator + this.workingDirectory);
 				
-				Pair<Integer, StringBuilder> output = getOutput(directory,true,getCommands());
+				Pair<Integer, StringBuilder> output = getOutput(directory,true, getCommands());
 
 				StringBuilder bld = output.getValue1();
 				writeReport(testReportName, bld.toString(), getLog());
@@ -231,13 +231,13 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 	//runs a shell command and captures the output
 	private Pair<Integer,StringBuilder> getOutput(File directory, boolean logOutput, String... commands) throws IOException, InterruptedException {
 		StringBuilder bld = new StringBuilder();
+		
 		ProcessBuilder t = new ProcessBuilder(commands);
 		
 		if (directory != null) {
 			t.directory(directory);
 		}
 		t.redirectErrorStream(true);
-		
 		
 		Process pr = t.start();
 		int exitCode = pr.waitFor();

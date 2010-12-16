@@ -40,6 +40,7 @@ public class MojosTest {
 	
 	//mocks the Plexus container dependency injection
 	private void mockSetUp(AbstractBddMojo mojo) {
+		mojo.setPython("python");
 		mojo.setProjectDirectory(new File("."));
 		mojo.setBuildDirectory(new File("target"));
 	}
