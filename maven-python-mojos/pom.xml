@@ -5,7 +5,7 @@
 
 	<groupId>maven-python-mojos</groupId>
 	<artifactId>maven-python-mojos</artifactId>
-	<version>1.1</version>
+	<version>1.2</version>
 	<packaging>pom</packaging>
 
 	<name>Parent Maven Python Mojos</name>
@@ -66,6 +66,11 @@
 				<groupId>org.apache.maven</groupId>
 				<artifactId>maven-core</artifactId>
 				<version>2.2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.javatuples</groupId>
+				<artifactId>javatuples</artifactId>
+				<version>1.1</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

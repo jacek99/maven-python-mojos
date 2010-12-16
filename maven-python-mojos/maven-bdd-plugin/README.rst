@@ -1,7 +1,7 @@
 Maven BDD Plugin 
 ================
 
-**version**: 0.7.0
+**version**: 0.8.0
 
 The goal of this plugin is to allow using BDD tools from the Python world
 for *integration testing* of Java web applications.
@@ -176,6 +176,33 @@ All the BDD reports are created in the
  
 folder
 
+Configuration
+-------------
+
+Changing the default Python interpreter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On some Linux flavors (e.g. CentOS) the default Python interpreter is ancient (2.4). In order to gain access to newer Python version
+an alternate install must be made with a separate executable (e.g. "python2.6","python2.7", etc.).
+
+The specific python interpreter name can be specified in the configuration by adding a *configuration* section for the *python* parameter, e.g.:
+::
+	<plugin>
+		<groupId>maven-python-mojos</groupId>
+		<artifactId>maven-bdd-plugin</artifactId>
+		<version>..</version>
+		<executions>
+			<execution>
+				<goals>
+					<goal>nose</goal>
+				</goals>
+				<configuration>
+					<python>python2.7</daemon>
+				</configuration>
+			</execution>
+		</executions>
+	</plugin>
+								
 
 Maven Repository
 ----------------

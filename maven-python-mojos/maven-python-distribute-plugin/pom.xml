@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>maven-python-mojos</artifactId>
 		<groupId>maven-python-mojos</groupId>
-		<version>1.1</version>
+		<version>1.2</version>
 	</parent>
 
 	<groupId>maven-python-mojos</groupId>

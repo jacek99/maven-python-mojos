@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>maven-python-mojos</groupId>
 		<artifactId>maven-python-mojos</artifactId>
-		<version>1.1</version>
+		<version>1.2</version>
 	</parent>
 
 	<groupId>maven-python-mojos</groupId>
 	<artifactId>maven-bdd-plugin</artifactId>
-	<version>0.7.0</version>
+	<version>0.8.0</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>Maven Python BDD Plugin</name>
@@ -20,6 +20,13 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.javatuples</groupId>
+			<artifactId>javatuples</artifactId>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
