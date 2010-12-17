@@ -120,7 +120,7 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 			if (testFolder.exists()) {
 
 				getLog().info("");
-				getLog().info("Running " + toolName + " from " + workingDirectory);
+				getLog().info("Running " + toolName + " from " + workingDirectory + " with " + python);
 				getLog().info("");
 
 				File directory = new File(projectDirectory + File.separator + this.workingDirectory);
