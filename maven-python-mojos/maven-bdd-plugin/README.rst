@@ -196,11 +196,11 @@ The specific python interpreter name can be specified in the configuration by ad
 				<goals>
 					<goal>nose</goal>
 				</goals>
-				<configuration>
-					<python>python2.7</python>
-				</configuration>
 			</execution>
 		</executions>
+		<configuration>
+			<python>python2.7</python>
+		</configuration>
 	</plugin>
 								
 
