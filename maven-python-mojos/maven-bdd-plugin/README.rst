@@ -1,7 +1,7 @@
 Maven BDD Plugin 
 ================
 
-**version**: 1.0.0
+**version**: 1.0.1
 
 The goal of this plugin is to allow using BDD tools from the Python world
 for *integration testing* of Java web applications.
