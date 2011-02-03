@@ -55,18 +55,20 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 	@Setter
 	private String python;
 
+	/**
+	 * The working directory from which the tests will be launched, can be a relative path
+	 * @parameter default-value="src/test/python"
+	 */
+	@Getter
+	@Setter
+	private String workingDirectory;
+
 	@Getter
 	@Setter
 	private String toolName;
 	@Getter
 	@Setter
 	private String testReportName;
-	@Getter
-	@Setter
-	private String workingDirectory;
-	@Getter
-	@Setter
-	private String testDirectory;
 	@Getter
 	@Setter
 	private String[] testCommands;
@@ -78,12 +80,9 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 	@Setter
 	private Set<String> requestOptions = newLinkedHashSet();
 
-	protected AbstractBddMojo(String toolName, String testReportName, String workingDirectory, String testDirectory,
-			String... testCommands) {
+	protected AbstractBddMojo(String toolName, String testReportName,String... testCommands) {
 		this.toolName = toolName;
 		this.testReportName = testReportName;
-		this.workingDirectory = workingDirectory;
-		this.testDirectory = testDirectory;
 		this.testCommands = testCommands;
 	}
 
@@ -115,16 +114,14 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 		try {
 			preExecute();
 
-			File testFolder = new File(projectDirectory,testDirectory);
+			File directory = new File(projectDirectory,this.workingDirectory);
 			
-			if (testFolder.exists()) {
+			if (directory.exists()) {
 
 				getLog().info("");
 				getLog().info("Running " + toolName + " from " + workingDirectory + " with " + python);
 				getLog().info("");
 
-				File directory = new File(projectDirectory + File.separator + this.workingDirectory);
-				
 				Pair<Integer, StringBuilder> output = getOutput(directory,true, getCommands());
 
 				StringBuilder bld = output.getValue1();
@@ -143,8 +140,8 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 
 			} else {
 
-				getLog().warn("No " + toolName + " unit test(s) found. Please create some in " + testFolder.getPath());
-				throw new MojoFailureException("No " + toolName + " unit test(s) found. Please create some in " + testFolder.getPath());
+				getLog().warn("No " + toolName + " unit test(s) found. Please create some in " + directory.getPath());
+				throw new MojoFailureException("No " + toolName + " unit test(s) found. Please create some in " + directory.getPath());
 
 			}
 		} catch (MojoFailureException ex) {

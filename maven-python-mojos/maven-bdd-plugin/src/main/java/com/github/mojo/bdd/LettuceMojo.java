@@ -35,7 +35,7 @@ public class LettuceMojo extends AbstractBddMojo {
 	public static final String FEATURE = "feature";
 	
 	public LettuceMojo() {
-		super("Lettuce","lettuce.txt","src/test/python","src/test/python/features","lettuce","-v 2");
+		super("Lettuce","lettuce.txt","lettuce","-v 2");
 	}
 	
 	@Override
@@ -46,7 +46,7 @@ public class LettuceMojo extends AbstractBddMojo {
 		if (System.getProperty(FEATURE) != null) {
 			String featureName = System.getProperty(FEATURE);
 			//we need to find the first file that corresponds to that feature name
-			File testDir = new File(getTestDirectory());
+			File testDir = new File(getWorkingDirectory(),"features");
 			Collection<File> features = FileUtils.listFiles(testDir, new String[]{"feature"}, true);
 			
 			boolean found = false;
@@ -59,7 +59,7 @@ public class LettuceMojo extends AbstractBddMojo {
 			}
 			
 			if (!found) {
-				throw new MojoFailureException("Unable to find " + featureName + ".feature under " + getTestDirectory());
+				throw new MojoFailureException("Unable to find " + featureName + ".feature under " + getWorkingDirectory() + "/features");
 			}
 		}
 		

@@ -43,6 +43,7 @@ public class MojosTest {
 		mojo.setPython("python");
 		mojo.setProjectDirectory(new File("."));
 		mojo.setBuildDirectory(new File("target"));
+		mojo.setWorkingDirectory("src/test/python");
 	}
 	
 	@Test
@@ -51,11 +52,9 @@ public class MojosTest {
 		mockSetUp(mojo);
 		
 		assertEquals("src/test/python",mojo.getWorkingDirectory());
-		assertEquals("src/test/python/features",mojo.getTestDirectory());
 		
 		//just for the test, point to a different folder to avoid conflicting with the Nose tests
 		mojo.setWorkingDirectory("src/test/lettuce");
-		mojo.setTestDirectory("src/test/lettuce/features");
 		
 		mojo.execute();
 		
@@ -72,7 +71,6 @@ public class MojosTest {
 		
 		//just for the test, point to a different folder to avoid conflicting with the Nose tests
 		mojo.setWorkingDirectory("src/test/lettuce");
-		mojo.setTestDirectory("src/test/lettuce/features");
 		
 		mojo.execute();
 		
@@ -94,7 +92,6 @@ public class MojosTest {
 		
 		//just for the test, point to a different folder to avoid conflicting with the Nose tests
 		mojo.setWorkingDirectory("src/test/lettuce");
-		mojo.setTestDirectory("src/test/lettuce/features");
 		
 		mojo.execute();
 	}
@@ -133,7 +130,6 @@ public class MojosTest {
 		mockSetUp(mojo);
 		
 		mojo.setWorkingDirectory("src/test/nose-undefined");
-		mojo.setTestDirectory("src/test/nose-undefined/features");
 		
 		mojo.execute();
 	}

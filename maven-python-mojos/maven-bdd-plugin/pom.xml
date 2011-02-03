@@ -10,7 +10,7 @@
 
 	<groupId>maven-python-mojos</groupId>
 	<artifactId>maven-bdd-plugin</artifactId>
-	<version>0.8.1</version>
+	<version>1.0.0</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>Maven Python BDD Plugin</name>

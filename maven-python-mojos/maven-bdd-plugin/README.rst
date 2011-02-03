@@ -202,7 +202,31 @@ The specific python interpreter name can be specified in the configuration by ad
 			<python>python2.7</python>
 		</configuration>
 	</plugin>
-								
+				
+Changing the default working directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default the tests are launched from the *src/test/python* folder in your current projects. You can override this
+by setting the *workingDirectory* parameter, e.g.:
+::
+	<plugin>
+		<groupId>maven-python-mojos</groupId>
+		<artifactId>maven-bdd-plugin</artifactId>
+		<version>..</version>
+		<executions>
+			<execution>
+				<goals>
+					<goal>nose</goal>
+				</goals>
+			</execution>
+		</executions>
+		<configuration>
+			<workingDirectory>../../bdd/myapp</python>
+		</configuration>
+	</plugin>
+
+This is useful if you keep your Java and Python code in totally separate projects, but want to run the Python BDD tests
+as part of your Java server integration tests.								
 
 Maven Repository
 ----------------
