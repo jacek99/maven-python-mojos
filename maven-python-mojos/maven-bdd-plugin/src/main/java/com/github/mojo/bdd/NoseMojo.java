@@ -35,9 +35,7 @@ public class NoseMojo extends AbstractBddMojo {
 	public static final String TAGS = "tags";
 	
 	public NoseMojo() {
-		super("Nose","nose.txt","nosetests","--with-freshen","-v","-s",
-				"--failure-detail", "--with-xunit","--xunit-file=../../../target/bdd-reports/nosetests.xml",
-				"--with-id","--id-file=../../../target/bdd-reports/.noseids");
+		super("Nose","nose.txt","nosetests","--with-freshen","-v","-s");
 	}
 
 	/* (non-Javadoc)

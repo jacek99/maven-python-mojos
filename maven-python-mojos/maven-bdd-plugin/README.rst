@@ -99,18 +99,6 @@ Place all your stories and Python test code in
 		</executions>
 	</plugin>
 
-
-**Re-running failed tests only**
-
-You can pass the *failed=true* command line option, e.g.
-
-  **mvn integration-test -Dfailed=true**
-  
-That will append the Nose "--failed" option which will tell it to only re-run the tests that failed during
-the last test run.
-
-	*Note*: there seem to be some issues with Freshen supporting the "--failed" option currently. An issue has been logged with them.
-
 **Re-running tagged tests only**
 
 In Freshen, you can annotate scenarios with tags, e.g. 
