@@ -237,7 +237,7 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 		t.redirectErrorStream(true);
 		
 		Process pr = t.start();
-		int exitCode = pr.waitFor();
+		
 		BufferedReader buf = new BufferedReader(new InputStreamReader(pr.getInputStream()));
 		String line = "";
 		while ((line = buf.readLine()) != null) {
@@ -251,6 +251,8 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 			}
 		}
 		buf.close();
+		int exitCode = pr.waitFor();
+		
 		return new Pair<Integer,StringBuilder>(exitCode,bld);
 	}
 
