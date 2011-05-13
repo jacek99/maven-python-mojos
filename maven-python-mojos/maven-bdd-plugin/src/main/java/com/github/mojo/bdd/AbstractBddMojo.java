@@ -250,6 +250,7 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 				getLog().info(line);
 			}
 		}
+		buf.close();
 		return new Pair<Integer,StringBuilder>(exitCode,bld);
 	}
 
