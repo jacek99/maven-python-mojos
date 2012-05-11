@@ -33,9 +33,10 @@ import org.apache.maven.plugin.MojoFailureException;
 public class NoseMojo extends AbstractBddMojo {
 
 	public static final String TAGS = "tags";
+	public static final String PATH = "path";
 	
 	public NoseMojo() {
-		super("Nose","nose.txt","nosetests","--with-freshen","-v","-s");
+		super("Nose","nose.txt","nosetests","--with-freshen","-v","-s","--failure-detail");
 	}
 
 	/* (non-Javadoc)
@@ -49,6 +50,12 @@ public class NoseMojo extends AbstractBddMojo {
 		} catch (IOException e) {
 			getLog().error("Failed to create touch target/bdd-reports/nosetests.xml", e);
 			throw new MojoExecutionException("Failed to create touch target/bdd-reports/nosetests.xml");
+		}
+		
+		//add support for explicitly specifying a path for BDD tests
+		if (System.getProperty(PATH) != null) {
+			String path = System.getProperty(PATH);
+			getRequestOptions().add(path);
 		}
 		
 		//add support for running with tags

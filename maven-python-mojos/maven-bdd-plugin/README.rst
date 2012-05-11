@@ -1,7 +1,7 @@
 Maven BDD Plugin 
 ================
 
-**version**: 1.0.3
+**version**: 1.0.4
 
 The goal of this plugin is to allow using BDD tools from the Python world
 for *integration testing* of Java web applications.
@@ -98,6 +98,21 @@ Place all your stories and Python test code in
 			</execution>
 		</executions>
 	</plugin>
+
+**Specifying test wildcards or path**
+
+In Freshen, you can specify a path or wildcards to select the test you want , e.g. 
+::
+	mytests_*.feature
+	
+	or:
+	
+	/testfolder/
+
+You can then pass the *path=<test path>* command line option, e.g.
+
+  **mvn integration-test -Dpath=custom_tests_*.feature**
+  
 
 **Re-running tagged tests only**
 

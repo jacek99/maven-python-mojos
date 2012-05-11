@@ -151,6 +151,23 @@ public class MojosTest {
 		assertFile("nose.txt","Addition:","OK");
 	}
 
+	@Test
+	public void testNoseTestPaths() throws MojoExecutionException, MojoFailureException, IOException {
+		
+		System.getProperties().put("path", "features/calc");
+		
+		NoseMojo mojo = new NoseMojo();
+		mockSetUp(mojo);
+		
+		mojo.execute();
+		
+		for(String opt : mojo.getRequestOptions()) {
+			assertEquals("features/calc",opt);
+		}
+		
+		assertFile("nose.txt","Addition:","OK");
+	}
+
 	
 	private void assertFile(String fileName,String... contains) throws IOException {
 		File file = new File("target/bdd-reports/" + fileName);

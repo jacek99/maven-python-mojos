@@ -231,6 +231,16 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 		
 		ProcessBuilder t = new ProcessBuilder(commands);
 		
+		//log
+		StringBuilder exec = new StringBuilder();
+		for(String command : commands) {
+			if (exec.length() > 0) {
+				exec.append(" ");
+			}
+			exec.append(command);
+		}
+		getLog().info("Executing '" + exec.toString() + "'");
+		
 		if (directory != null) {
 			t.directory(directory);
 		}
