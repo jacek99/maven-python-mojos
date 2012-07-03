@@ -5,7 +5,7 @@
 
 	<groupId>maven-python-mojos</groupId>
 	<artifactId>maven-python-mojos</artifactId>
-	<version>1.2</version>
+	<version>1.3</version>
 	<packaging>pom</packaging>
 
 	<name>Parent Maven Python Mojos</name>
@@ -38,7 +38,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>0.9.3</version>
+			<version>0.11.2</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -139,13 +139,6 @@
 		</extensions>
 
 	</build>
-
-	<repositories>
-		<repository>
-			<id>projectlombok.org</id>
-			<url>http://projectlombok.org/mavenrepo</url>
-		</repository>
-	</repositories>
 
 	<distributionManagement>
 		<repository>

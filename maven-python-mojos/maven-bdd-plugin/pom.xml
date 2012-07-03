@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>maven-python-mojos</groupId>
 		<artifactId>maven-python-mojos</artifactId>
-		<version>1.2</version>
+		<version>1.3</version>
 	</parent>
 
 	<groupId>maven-python-mojos</groupId>
 	<artifactId>maven-bdd-plugin</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>Maven Python BDD Plugin</name>

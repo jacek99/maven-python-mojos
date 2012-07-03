@@ -133,7 +133,7 @@ public abstract class AbstractBddMojo extends AbstractMojo {
 				}
 
 				if (output.getValue0() != 0) {
-					throw new MojoFailureException(toolName + " unit test(s) failed");
+					throw new MojoFailureException(toolName + " unit test(s) failed. Return code : " + output.getValue0());
 				}
 
 				postExecute(bld);
